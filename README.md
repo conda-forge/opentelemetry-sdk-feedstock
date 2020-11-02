@@ -5,11 +5,9 @@ Home: https://github.com/open-telemetry/opentelemetry-python/tree/master/opentel
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/opentelemetry-sdk-feedstock/blob/master/LICENSE.txt)
 
 Summary: OpenTelemetry Python SDK
-
-
 
 Current build status
 ====================
