@@ -25,15 +25,15 @@ requirements:
 
 test:
   imports:
-    - opentelemetry.sdk.metrics
-    - opentelemetry.sdk.metrics.export
+    - opentelemetry.sdk
+    - opentelemetry.sdk.resources
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-sdk
+  home: https://github.com/open-telemetry/opentelemetry-python/tree/measter/opentelemetry-sdk
   summary: OpenTelemetry Python SDK
   license: Apache-2.0
   license_file: LICENSE
