@@ -1,7 +1,7 @@
 About opentelemetry-sdk
 =======================
 
-Home: https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-sdk
+Home: https://github.com/open-telemetry/opentelemetry-python/tree/measter/opentelemetry-sdk
 
 Package license: Apache-2.0
 
@@ -36,6 +36,7 @@ Installing `opentelemetry-sdk` from the `conda-forge` channel can be achieved by
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `opentelemetry-sdk` can be installed with:
