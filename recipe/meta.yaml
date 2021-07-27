@@ -1,6 +1,16 @@
 {% set name = "opentelemetry-sdk" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
+# Common to all opentelemetry python libraries
+{% set vsegments = version.split('.') %}
+# not all packages in opentelemetry are at the most recent version
+{% set preoffset = 19 %}
+{% set canonical_minor_pre = (vsegments[1].split('b')[0] | int) - (preoffset | int) %}
+{% set canonical_minor_rel = (vsegments[1] | int) %}
+# determine the canonical minor version of the 1.x opentelemetry associated with this package
+{% set canonical_minor = canonical_minor_rel if (vsegments[0] == '1') else canonical_minor_pre %}
+{% set vpre = '0.{}b0'.format(canonical_minor + preoffset ) %}
+{% set vrel = '1.{}'.format(canonical_minor) %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +18,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aaac04af32d9ac3bcc0bdc2acf9f4c65328e981d587986797e8161e3a416a669
+  sha256: a7a65cf99d4ce205c51c71a0c68c4d0b7917e8babd5469a46af6143e9fc3fc14
 
 build:
   number: 0
@@ -22,7 +32,8 @@ requirements:
   run:
     - opentelemetry-api =={{ version }}
     - python >=3.4
-    - opentelemetry-semantic-conventions
+    - opentelemetry-semantic-conventions =={{ vpre }}
+    - opentelemetry-instrumentation =={{ vpre }}
 
 test:
   imports:
