@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-sdk" %}
-{% set version = "1.15.0" %}
+{% set version = "1.16.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_sdk-{{ version }}.tar.gz
-  sha256: 98dbffcfeebcbff12c0c974292d6ea603180a145904cf838b1fe4d5c99078425
+  sha256: 4d3bb91e9e209dbeea773b5565d901da4f76a29bf9dbc1c9500be3cabb239a4e
 
 build:
   noarch: python
@@ -21,10 +21,11 @@ requirements:
     - hatchling
   run:
     - python >=3.7
-    - opentelemetry-api ==1.15.0
-    - opentelemetry-semantic-conventions ==0.36b0
+    - opentelemetry-api ==1.16.0
+    - opentelemetry-semantic-conventions ==0.37b0
     - setuptools >=16.0
     - typing-extensions >=3.7.4
+    # - typing_extensions >=3.7.4
 
 test:
   imports:
