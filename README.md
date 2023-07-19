@@ -3,7 +3,7 @@ About opentelemetry-sdk-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/opentelemetry-sdk-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/open-telemetry/opentelemetry-python/tree/measter/opentelemetry-sdk
+Home: https://github.com/open-telemetry/opentelemetry-python/tree/master/opentelemetry-sdk
 
 Package license: Apache-2.0
 
