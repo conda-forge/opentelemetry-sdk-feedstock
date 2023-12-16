@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-sdk" %}
-{% set version = "1.21.0" %}
+{% set version = "1.22.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_sdk-{{ version }}.tar.gz
-  sha256: 3ec8cd3020328d6bc5c9991ccaf9ae820ccb6395a5648d9a95d3ec88275b8879
+  sha256: 45267ac1f38a431fc2eb5d6e0c0d83afc0b78de57ac345488aa58c28c17991d0
 
 build:
   noarch: python
@@ -21,9 +21,8 @@ requirements:
     - hatchling
   run:
     - python >=3.7
-    - opentelemetry-api ==1.21.0
-    - opentelemetry-semantic-conventions ==0.42b0
-    - setuptools >=16.0
+    - opentelemetry-api =={{ version }}
+    - opentelemetry-semantic-conventions ==0.43b0
     - typing-extensions >=3.7.4
     # - typing_extensions >=3.7.4
     # - typing_extensions >=3.7.4
@@ -40,7 +39,7 @@ test:
     - pip
 
 about:
-  home: https://github.com/open-telemetry/opentelemetry-python/tree/measter/opentelemetry-sdk
+  home: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-sdk
   summary: OpenTelemetry Python SDK
   license: Apache-2.0
   license_file: LICENSE
