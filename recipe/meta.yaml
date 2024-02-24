@@ -49,4 +49,4 @@ extra:
     - rxm7706
     - mariusvniekerk
     - conda-forge/opentelemetry-api
-    - conda-forgeopentelemetry-semantic-conventions
+    - conda-forge/opentelemetry-semantic-conventions
