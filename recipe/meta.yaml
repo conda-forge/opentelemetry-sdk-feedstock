@@ -1,5 +1,5 @@
 {% set name = "opentelemetry-sdk" %}
-{% set version = "1.22.0" %}
+{% set version = "1.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_sdk-{{ version }}.tar.gz
-  sha256: 45267ac1f38a431fc2eb5d6e0c0d83afc0b78de57ac345488aa58c28c17991d0
+  sha256: 9ddf60195837b59e72fd2033d6a47e2b59a0f74f0ec37d89387d89e3da8cab7f
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
     - python >=3.8
-    - pip
     - hatchling
+    - pip
   run:
     - python >=3.8
     - opentelemetry-api =={{ version }}
-    - opentelemetry-semantic-conventions ==0.43b0
+    - opentelemetry-semantic-conventions ==0.44b0
     - typing-extensions >=3.7.4
     # - typing_extensions >=3.7.4
     # - typing_extensions >=3.7.4
@@ -48,3 +48,5 @@ extra:
   recipe-maintainers:
     - rxm7706
     - mariusvniekerk
+    - conda-forge/opentelemetry-api
+    - conda-forge/opentelemetry-semantic-conventions
