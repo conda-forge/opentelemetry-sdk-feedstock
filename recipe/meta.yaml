@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_sdk-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/opentelemetry_sdk-{{ version }}.tar.gz
   sha256: 5fed24c5497e10df30282456fe2910f83377797511de07d14cec0d3e0a1a3110
 
 build:
@@ -16,12 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
+    - python >={{ python_min }}
     - typing_extensions >=3.7.4
-    - python >=3.8
     - opentelemetry-api ==1.28.1
     - opentelemetry-semantic-conventions ==0.49b1
     - typing-extensions >=3.7.4
@@ -38,6 +38,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
